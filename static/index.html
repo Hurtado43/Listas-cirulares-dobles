@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aventura Maker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="barra">
+    <h1>🗺️ Aventura Maker</h1>
+    <div class="marcador" id="marcador"></div>
+  </header>
+
+  <main class="contenedor">
+    <aside class="mundos">
+      <h2>Mundos</h2>
+      <div id="listaMundos"></div>
+      <button class="btn btn-grande" id="btnNuevoMundo">＋ Nuevo mundo</button>
+    </aside>
+
+    <section class="mapa" id="mapa">
+      <div class="vacio">
+        <div class="vacio-emoji">🧭</div>
+        <p>Elige un mundo o crea uno nuevo para empezar la aventura</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="modalMundo">
+    <form class="ventana" id="formMundo">
+      <h2 id="tituloMundo">Nuevo mundo</h2>
+      <label>Nombre
+        <input name="nombre" required maxlength="40" placeholder="Ej: Cueva de cristal">
+      </label>
+      <label>Ícono</label>
+      <div class="opciones" id="opcionesEmoji"></div>
+      <label>Color</label>
+      <div class="opciones" id="opcionesColor"></div>
+      <div class="acciones">
+        <button type="button" class="btn btn-gris" data-cerrar>Cancelar</button>
+        <button type="submit" class="btn">Guardar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="modal" id="modalNivel">
+    <form class="ventana ventana-ancha" id="formNivel">
+      <h2 id="tituloNivel">Nuevo nivel</h2>
+      <label>Nombre del nivel
+        <input name="nombre" required maxlength="50" placeholder="Ej: El puente roto">
+      </label>
+      <label>Dificultad</label>
+      <div class="estrellas" id="estrellas"></div>
+      <div class="secciones" id="secciones"></div>
+      <div class="acciones">
+        <button type="button" class="btn btn-rojo" id="btnBorrarNivel">🗑️ Borrar</button>
+        <span class="espacio"></span>
+        <button type="button" class="btn btn-gris" data-cerrar>Cancelar</button>
+        <button type="submit" class="btn">Guardar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="aviso" id="aviso"></div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
